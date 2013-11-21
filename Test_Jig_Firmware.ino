@@ -294,7 +294,8 @@ void loop()
                 uint8_t sample = PINJ & B11111100;
                 for(i=0; i<=4; i++){
                   if(((lastPortSample ^ sample) & (B00000100<<i)) && consecutiveReads[i] >= DEBOUNCE){
-                    posCounter[i]++;
+                    if (posCounter[i] < 5)
+                        posCounter[i]++;
                     consecutiveReads[i] = 0;
                   }
                   stepperCount[i][posCounter[i]]++;
