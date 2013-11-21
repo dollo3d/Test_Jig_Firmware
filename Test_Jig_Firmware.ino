@@ -52,6 +52,7 @@ void setup()
   pinMode(START_PIN, INPUT); //Start Pin
   digitalWrite(START_PIN,HIGH); //Start Pin pullups  
   pinMode(POWER_PIN, OUTPUT); //powersupply pin
+  digitalWrite(POWER_PIN,LOW); //Power Pin pulldown
 
   //RAMBo
   DDRA = B11111000; //enable
