@@ -46,6 +46,9 @@ void setup()
   //init digipots
   digipot::init();
 
+  // Disable SPI so we can use SPI pins as GPIO
+  SPCR = 0;
+
   //setup pins
   pinMode(ENDSTOP_PIN, INPUT); //Endstop
   digitalWrite(ENDSTOP_PIN,HIGH); //turn on endstop pullups
